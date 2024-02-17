@@ -1,0 +1,33 @@
+.progress {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.progress span {
+  background-color: var(--gray-400);
+  color: var(--gray-200);
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.created {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: var(--blue-300);
+}
+
+.done {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: var(--purple-300);
+}
