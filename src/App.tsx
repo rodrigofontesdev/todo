@@ -1,11 +1,11 @@
 import { Header } from "./components/Header"
 import { NewTaskForm } from "./components/NewTaskForm"
+import { Task } from "./components/Task"
 import { TaskProgress } from "./components/TaskProgress"
 
 import styles from "./App.module.css"
 import "./styles/global.css"
-
-import clipboardImg from "./assets/clipboard.svg"
+import { Empty } from "./components/Empty"
 
 export function App() {
   return (
@@ -15,15 +15,22 @@ export function App() {
       <main>
         <div className={styles.container}>
           <NewTaskForm />
+
           <TaskProgress />
 
-          <div className={styles.empty}>
-            <img src={clipboardImg} alt="Ícone de prancheta" />
-            <p>
-              <strong>Você ainda não tem tarefas cadastradas</strong>
-            </p>
-            <p>Crie tarefas e organize seus itens a fazer</p>
-          </div>
+          <Task content="Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer." />
+          <Task content="Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer." />
+          <Task content="Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer." />
+          <Task
+            content="Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer."
+            isDone={true}
+          />
+          <Task
+            content="Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer."
+            isDone={true}
+          />
+
+          {/* <Empty /> */}
         </div>
       </main>
     </>

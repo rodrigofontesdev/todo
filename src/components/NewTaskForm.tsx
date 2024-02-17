@@ -7,7 +7,7 @@ export function NewTaskForm() {
     <form className={styles.newTaskForm}>
       <input type="text" placeholder="Adicionar uma nova tarefa" />
       <button>
-        Criar <PlusCircle size={16} weight="bold" />
+        Criar <PlusCircle size={18} weight="bold" />
       </button>
     </form>
   )
