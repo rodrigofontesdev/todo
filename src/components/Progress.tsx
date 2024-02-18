@@ -1,6 +1,6 @@
-import styles from "./TaskProgress.module.css"
+import styles from "./Progress.module.css"
 
-export function TaskProgress() {
+export function Progress() {
   return (
     <div className={styles.progress}>
       <div className={styles.created}>

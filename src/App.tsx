@@ -1,11 +1,11 @@
 import { Empty } from "./components/Empty"
 import { Header } from "./components/Header"
-import { NewTaskForm } from "./components/NewTaskForm"
+import { CreateTask } from "./components/CreateTask"
 import { Task } from "./components/Task"
-import { TaskProgress } from "./components/TaskProgress"
+import { Progress } from "./components/Progress"
 
 import styles from "./App.module.css"
-import "./styles/global.css"
+import "./global.css"
 
 export function App() {
   return (
@@ -14,9 +14,9 @@ export function App() {
 
       <main>
         <div className={styles.container}>
-          <NewTaskForm />
+          <CreateTask />
 
-          <TaskProgress />
+          <Progress />
 
           <Task content="Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer." />
           <Task content="Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer." />

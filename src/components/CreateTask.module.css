@@ -1,4 +1,4 @@
-.newTaskForm {
+.formCreateTask {
   width: 100%;
   max-width: 48rem;
   margin: -1.6875rem auto 4rem auto;
@@ -6,7 +6,7 @@
   column-gap: 0.5rem;
 }
 
-.newTaskForm input {
+.formCreateTask input {
   width: 100%;
   background-color: var(--gray-500);
   color: var(--gray-100);
@@ -16,12 +16,12 @@
   transition: border 200ms;
 }
 
-.newTaskForm input:focus {
+.formCreateTask input:focus {
   color: var(--gray-100);
   border-color: var(--purple-400);
 }
 
-.newTaskForm button {
+.formCreateTask button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,6 +35,6 @@
   transition: background 200ms;
 }
 
-.newTaskForm button:hover {
+.formCreateTask button:hover {
   background-color: var(--blue-300);
 }
