@@ -1,3 +1,4 @@
+import { Empty } from "./components/Empty"
 import { Header } from "./components/Header"
 import { NewTaskForm } from "./components/NewTaskForm"
 import { Task } from "./components/Task"
@@ -5,7 +6,6 @@ import { TaskProgress } from "./components/TaskProgress"
 
 import styles from "./App.module.css"
 import "./styles/global.css"
-import { Empty } from "./components/Empty"
 
 export function App() {
   return (

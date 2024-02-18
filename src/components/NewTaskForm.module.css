@@ -32,8 +32,6 @@
   font-weight: bold;
   padding: 1rem;
   border-radius: 0.5rem;
-  border: none;
-  cursor: pointer;
   transition: background 200ms;
 }
 

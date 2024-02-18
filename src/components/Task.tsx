@@ -11,7 +11,12 @@ export function Task({ content, isDone }: TaskProps) {
   return (
     <div className={`${styles.task} ${isDone ? styles.done : ""}`}>
       <div className={styles.formCheck}>
-        <input type="checkbox" id="checkbox" name="checkbox" />
+        <input
+          type="checkbox"
+          id="checkbox"
+          name="checkbox"
+          defaultChecked={isDone}
+        />
         <label htmlFor="checkbox">{content}</label>
       </div>
 
