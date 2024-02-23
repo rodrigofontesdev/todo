@@ -8,3 +8,44 @@ main {
   padding: 0 1rem;
   margin: 0 auto;
 }
+
+.formCreateTask {
+  width: 100%;
+  max-width: 48rem;
+  margin: -1.6875rem auto 4rem auto;
+  display: flex;
+  column-gap: 0.5rem;
+}
+
+.formCreateTask input {
+  width: 100%;
+  background-color: var(--gray-500);
+  color: var(--gray-100);
+  border: 1px solid var(--gray-700);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  transition: border 200ms;
+}
+
+.formCreateTask input:focus {
+  color: var(--gray-100);
+  border-color: var(--purple-400);
+}
+
+.formCreateTask button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.5rem;
+  background-color: var(--blue-400);
+  color: var(--gray-100);
+  font-size: 0.875rem;
+  font-weight: bold;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  transition: background 200ms;
+}
+
+.formCreateTask button:hover {
+  background-color: var(--blue-300);
+}
