@@ -1,46 +1,95 @@
-import { PlusCircle } from "@phosphor-icons/react"
+import { PlusCircle, Trash } from "@phosphor-icons/react"
 import { ChangeEvent, FormEvent, InvalidEvent, useState } from "react"
-import { Button } from "./components/Button"
+import { Counter } from "./components/Counter"
 import { Empty } from "./components/Empty"
+import { Button } from "./components/Form/Button"
+import { Input } from "./components/Form/Input"
+import { Label } from "./components/Form/Label"
 import { Header } from "./components/Header"
-import { Input } from "./components/Input"
-import { Progress } from "./components/Progress"
 import { Task } from "./components/Task"
 
 import styles from "./App.module.css"
 import "./global.css"
 
-interface Task {
+interface ITask {
   id: string
-  text: string
+  content: string
   isDone: boolean
 }
 
 export function App() {
-  const [tasks, setTasks] = useState<Task[]>([])
-  const [taskText, setTaskText] = useState("")
+  const [tasks, setTasks] = useState<ITask[]>([])
+  const [taskContent, setTaskContent] = useState("")
+  const [createdTaskCounter, setCreatedTaskCounter] = useState(0)
+  const [doneTaskCounter, setDoneTaskCounter] = useState(0)
 
   function handleAddTask(event: FormEvent) {
     event.preventDefault()
 
-    const newTask: Task = {
+    const newTask: ITask = {
       id: crypto.randomUUID(),
-      text: taskText,
+      content: taskContent,
       isDone: false,
     }
 
     setTasks([...tasks, newTask])
-    setTaskText("")
+    setTaskContent("")
+    updateCreatedTaskCounter(1)
   }
 
-  function handleTaskTextChange(event: ChangeEvent<HTMLInputElement>) {
+  function handleDeleteTask(taskId: string) {
+    const deletedTask = tasks.find((task) => {
+      return task.id === taskId
+    })
+    const updatedTasks = tasks.filter((task) => {
+      return task.id !== taskId
+    })
+
+    if (deletedTask && deletedTask.isDone) {
+      updateDoneTaskCounter(-1)
+    }
+
+    setTasks(updatedTasks)
+    updateCreatedTaskCounter(-1)
+  }
+
+  function handleChangeTaskProgress(event: ChangeEvent<HTMLInputElement>) {
+    const updatedTasks = tasks.map((task) => {
+      if (task.id === event.target.id) {
+        return {
+          ...task,
+          isDone: !task.isDone,
+        }
+      }
+
+      return task
+    })
+
+    setTasks(updatedTasks)
+    updateDoneTaskCounter(event.target.checked ? 1 : -1)
+  }
+
+  function handleNewTaskContentChange(event: ChangeEvent<HTMLInputElement>) {
     event.target.setCustomValidity("")
-
-    setTaskText(event.target.value)
+    setTaskContent(event.target.value)
   }
 
-  function handleTaskTextOnInvalid(event: InvalidEvent<HTMLInputElement>) {
+  function handleNewTaskContentInvalid(event: InvalidEvent<HTMLInputElement>) {
     event.target.setCustomValidity("Esse campo é obrigatório!")
+  }
+
+  function updateCreatedTaskCounter(indicator: number) {
+    const newCounter = createdTaskCounter + indicator
+
+    setCreatedTaskCounter(
+      indicator < 0 && createdTaskCounter === 0 ? 0 : newCounter
+    )
+  }
+
+  function updateDoneTaskCounter(indicator: number) {
+    const newCounter = doneTaskCounter + indicator
+
+    setDoneTaskCounter(indicator < 0 && doneTaskCounter === 0 ? 0 : newCounter)
   }
 
   return (
@@ -52,24 +101,41 @@ export function App() {
           <form className={styles.formCreateTask} onSubmit={handleAddTask}>
             <Input
               type="text"
-              name="taskText"
               placeholder="Adicionar uma nova tarefa"
-              value={taskText}
-              onChange={handleTaskTextChange}
-              onInvalid={handleTaskTextOnInvalid}
+              value={taskContent}
               required
+              onChange={handleNewTaskContentChange}
+              onInvalid={handleNewTaskContentInvalid}
             />
+
             <Button type="submit">
               Criar <PlusCircle size={18} weight="bold" />
             </Button>
           </form>
 
-          <Progress />
+          <Counter
+            data={{ created: createdTaskCounter, done: doneTaskCounter }}
+          />
 
           {tasks.length > 0 ? (
             tasks.map((task) => {
               return (
-                <Task key={task.id} content={task.text} isDone={task.isDone} />
+                <Task key={task.id} isDone={task.isDone}>
+                  <Label htmlFor={task.id}>
+                    <Input
+                      type="checkbox"
+                      id={task.id}
+                      defaultChecked={task.isDone}
+                      onChange={handleChangeTaskProgress}
+                    />
+
+                    {task.content}
+                  </Label>
+
+                  <Button onClick={() => handleDeleteTask(task.id)}>
+                    <Trash size={18} />
+                  </Button>
+                </Task>
               )
             })
           ) : (
