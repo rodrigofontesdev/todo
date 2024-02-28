@@ -20,7 +20,6 @@ interface ITask {
 export function App() {
   const [tasks, setTasks] = useState<ITask[]>([])
   const [taskContent, setTaskContent] = useState("")
-  const [createdTaskCounter, setCreatedTaskCounter] = useState(0)
   const [doneTaskCounter, setDoneTaskCounter] = useState(0)
 
   function handleAddTask(event: FormEvent) {
@@ -34,7 +33,6 @@ export function App() {
 
     setTasks([newTask, ...tasks])
     setTaskContent("")
-    updateCreatedTaskCounter(1)
   }
 
   function handleDeleteTask(taskId: string) {
@@ -50,7 +48,6 @@ export function App() {
     }
 
     setTasks(updatedTasks)
-    updateCreatedTaskCounter(-1)
   }
 
   function handleChangeTaskProgress(event: ChangeEvent<HTMLInputElement>) {
@@ -76,14 +73,6 @@ export function App() {
 
   function handleNewTaskContentInvalid(event: InvalidEvent<HTMLInputElement>) {
     event.target.setCustomValidity("Esse campo é obrigatório!")
-  }
-
-  function updateCreatedTaskCounter(indicator: number) {
-    const newCounter = createdTaskCounter + indicator
-
-    setCreatedTaskCounter(
-      indicator < 0 && createdTaskCounter === 0 ? 0 : newCounter
-    )
   }
 
   function updateDoneTaskCounter(indicator: number) {
@@ -114,7 +103,7 @@ export function App() {
           </form>
 
           <Counter
-            data={{ created: createdTaskCounter, done: doneTaskCounter }}
+            data={{ created: tasks.length, done: doneTaskCounter }}
           />
 
           {tasks.length > 0 ? (
