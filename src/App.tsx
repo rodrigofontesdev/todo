@@ -32,7 +32,7 @@ export function App() {
       isDone: false,
     }
 
-    setTasks([...tasks, newTask])
+    setTasks([newTask, ...tasks])
     setTaskContent("")
     updateCreatedTaskCounter(1)
   }
