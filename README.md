@@ -13,7 +13,7 @@ The purpose of the project is to apply the most fundamental concepts of React, c
 
 # Getting Started
 
-- Clone the repository (`git clone git@github.com:rodrigofontesdev/ignite-todo.git`)
+- Clone the repository (`git clone git@github.com:rodrigofontesdev/todo.git`)
 - Install dependencies (`npm install`)
 - Run application (`npm run dev`)
 
