@@ -2,7 +2,7 @@
 
 # ToDo
 
-A web application to create and manage tasks, in a "To-Do list" style.
+A web application to create and manage tasks in a "To-Do list" style.
 
 The purpose of the project is to apply the most fundamental concepts of React, concepts that will be used in every future application.
 
