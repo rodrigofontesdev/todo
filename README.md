@@ -39,4 +39,4 @@ The purpose of the project is to apply the most fundamental concepts of React, c
 
 # License
 
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/rodrigofontesdev/ignite-todo/blob/main/LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details.
