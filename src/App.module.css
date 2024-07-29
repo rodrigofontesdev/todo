@@ -39,8 +39,8 @@ main {
   column-gap: 0.5rem;
   background-color: var(--blue-400);
   color: var(--gray-100);
-  font-size: 0.875rem;
-  font-weight: bold;
+  font-size: var(--font-sm);
+  font-weight: var(--font-bold);
   padding: 1rem;
   border-radius: 0.5rem;
   transition: background 200ms;

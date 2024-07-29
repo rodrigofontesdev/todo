@@ -14,10 +14,34 @@
   --gray-100: #f2f2f2;
 
   --red-400: #e25858;
+
+  --font-primary: 'Inter', inter-fallback;
+
+  --font-xs: 0.75rem;
+  --font-sm: 0.875rem;
+  --font-md: 1rem;
+
+  --font-normal: 400;
+  --font-bold: 700;
+
+  --line-normal: 1.4;
 }
 
-:focus {
-  outline: transparent;
+@font-face {
+  font-family: 'Inter';
+  src: url('/assets/fonts/inter.woff2') format('woff2');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: inter-fallback;
+  src: local('Arial');
+  ascent-override: 90.49%;
+  descent-override: 22.56%;
+  line-gap-override: 0%;
+  size-adjust: 107.06%;
 }
 
 * {
@@ -27,29 +51,23 @@
   box-sizing: border-box;
 }
 
-@media (max-width: 768px) {
-  html {
-    font-size: 87.5%;
-  }
+:focus {
+  outline: transparent;
 }
 
 body {
   background-color: var(--gray-600);
   color: var(--gray-300);
+  font-family: var(--font-primary);
+  font-weight: var(--font-normal);
+  line-height: var(--line-normal);
   -webkit-font-smoothing: antialiased;
 }
 
-body,
 input,
 textarea,
 button {
-  font-family: 'Inter', sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings: 'slnt' 0;
-  font-size: 1rem;
-  line-height: 140%;
+  font-family: var(--font-primary);
 }
 
 button {

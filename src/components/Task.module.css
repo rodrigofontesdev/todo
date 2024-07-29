@@ -22,7 +22,7 @@
 .task label {
   display: flex;
   column-gap: 0.75rem;
-  font-size: 0.875rem;
+  font-size: var(--font-sm);
   color: var(--gray-100);
   word-break: break-word;
   cursor: pointer;
