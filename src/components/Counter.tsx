@@ -1,4 +1,4 @@
-import styles from "./Counter.module.css"
+import styles from './Counter.module.css'
 
 interface ICounter {
   created: number

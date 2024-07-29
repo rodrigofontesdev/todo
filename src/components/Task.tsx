@@ -1,6 +1,6 @@
-import { ReactNode } from "react"
+import { ReactNode } from 'react'
 
-import styles from "./Task.module.css"
+import styles from './Task.module.css'
 
 interface TaskProps {
   children: ReactNode
@@ -8,9 +8,5 @@ interface TaskProps {
 }
 
 export function Task({ children, isDone }: TaskProps) {
-  return (
-    <div className={`${styles.task} ${isDone ? styles.done : ""}`}>
-      {children}
-    </div>
-  )
+  return <div className={`${styles.task} ${isDone ? styles.done : ''}`}>{children}</div>
 }

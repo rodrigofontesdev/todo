@@ -1,15 +1,15 @@
-import { PlusCircle, Trash } from "@phosphor-icons/react"
-import { ChangeEvent, FormEvent, InvalidEvent, useState } from "react"
-import { Counter } from "./components/Counter"
-import { Empty } from "./components/Empty"
-import { Button } from "./components/Form/Button"
-import { Input } from "./components/Form/Input"
-import { Label } from "./components/Form/Label"
-import { Header } from "./components/Header"
-import { Task } from "./components/Task"
+import { PlusCircle, Trash } from '@phosphor-icons/react'
+import { ChangeEvent, FormEvent, InvalidEvent, useState } from 'react'
+import { Counter } from './components/Counter'
+import { Empty } from './components/Empty'
+import { Button } from './components/Form/Button'
+import { Input } from './components/Form/Input'
+import { Label } from './components/Form/Label'
+import { Header } from './components/Header'
+import { Task } from './components/Task'
 
-import styles from "./App.module.css"
-import "./global.css"
+import styles from './App.module.css'
+import './global.css'
 
 interface ITask {
   id: string
@@ -19,7 +19,7 @@ interface ITask {
 
 export function App() {
   const [tasks, setTasks] = useState<ITask[]>([])
-  const [taskContent, setTaskContent] = useState("")
+  const [taskContent, setTaskContent] = useState('')
   const [doneTaskCounter, setDoneTaskCounter] = useState(0)
 
   function handleAddTask(event: FormEvent) {
@@ -32,7 +32,7 @@ export function App() {
     }
 
     setTasks([newTask, ...tasks])
-    setTaskContent("")
+    setTaskContent('')
   }
 
   function handleDeleteTask(taskId: string) {
@@ -67,12 +67,12 @@ export function App() {
   }
 
   function handleNewTaskContentChange(event: ChangeEvent<HTMLInputElement>) {
-    event.target.setCustomValidity("")
+    event.target.setCustomValidity('')
     setTaskContent(event.target.value)
   }
 
   function handleNewTaskContentInvalid(event: InvalidEvent<HTMLInputElement>) {
-    event.target.setCustomValidity("Esse campo é obrigatório!")
+    event.target.setCustomValidity('Esse campo é obrigatório!')
   }
 
   function updateDoneTaskCounter(indicator: number) {
@@ -102,9 +102,7 @@ export function App() {
             </Button>
           </form>
 
-          <Counter
-            data={{ created: tasks.length, done: doneTaskCounter }}
-          />
+          <Counter data={{ created: tasks.length, done: doneTaskCounter }} />
 
           {tasks.length > 0 ? (
             tasks.map((task) => {
