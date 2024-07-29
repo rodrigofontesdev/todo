@@ -2,9 +2,20 @@
 
 # ToDo
 
-A web application to create and manage tasks, in a "To-Do list" style.
+A web application to create and manage tasks in a "To-Do list" style.
 
 The purpose of the project is to apply the most fundamental concepts of React, concepts that will be used in every future application.
+
+# Prerequisites
+
+- Node.js
+- Git
+
+# Getting Started
+
+- Clone the repository (`git clone git@github.com:rodrigofontesdev/todo.git`)
+- Install dependencies (`npm install`)
+- Run application (`npm run dev`)
 
 # Features
 
@@ -21,17 +32,6 @@ The purpose of the project is to apply the most fundamental concepts of React, c
 - Retain data between renders (`useState()`)
 - Immutability (and how to not break it!)
 
-# Prerequisites
-
-- Node.js
-- Git
-
-# Getting Started
-
-- Clone the repository (`git clone git@github.com:rodrigofontesdev/ignite-todo.git`)
-- Install dependencies (`npm install`)
-- Run application (`npm run dev`)
-
 # Built With
 
 - React
@@ -39,4 +39,4 @@ The purpose of the project is to apply the most fundamental concepts of React, c
 
 # License
 
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/rodrigofontesdev/ignite-todo/blob/main/LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details.
