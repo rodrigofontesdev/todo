@@ -1,12 +1,10 @@
 .task {
-  width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: start;
   column-gap: 0.75rem;
+  background-color: var(--gray-500);
   padding: 1rem;
   margin-bottom: 0.75rem;
-  background-color: var(--gray-500);
   border: 1px solid var(--gray-400);
   border-radius: 0.5rem;
 }
@@ -21,9 +19,10 @@
 
 .task label {
   display: flex;
+  align-items: center;
   column-gap: 0.75rem;
-  font-size: var(--font-sm);
   color: var(--gray-100);
+  font-size: var(--font-sm);
   word-break: break-word;
   cursor: pointer;
 }
@@ -34,6 +33,7 @@
 }
 
 .task input[type='checkbox'] {
+  appearance: none;
   width: 1.125rem;
   height: 1.125rem;
   flex-shrink: 0;
@@ -44,8 +44,6 @@
   background-size: 0.625rem;
   border: 2px solid var(--blue-300);
   border-radius: 100%;
-  margin-top: 0.25rem;
-  appearance: none;
   cursor: pointer;
   transition: all 200ms;
 }
@@ -56,7 +54,7 @@
 }
 
 .task input[type='checkbox']:checked {
-  background-image: url('../assets/checkmark.svg');
+  background-image: url('/src/assets/checkmark.svg');
   background-color: var(--purple-400);
   border-color: var(--purple-400);
   transition: all 200ms;

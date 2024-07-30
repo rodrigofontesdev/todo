@@ -1,10 +1,9 @@
 .counter {
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  row-gap: 0.5rem;
+  gap: 0.5rem;
   margin-bottom: 1.5rem;
 }
 
@@ -21,16 +20,16 @@
   display: flex;
   align-items: center;
   column-gap: 0.5rem;
+  color: var(--blue-300);
   font-size: var(--font-sm);
   font-weight: var(--font-bold);
-  color: var(--blue-300);
 }
 
 .done {
   display: flex;
   align-items: center;
   column-gap: 0.5rem;
+  color: var(--purple-300);
   font-size: var(--font-sm);
   font-weight: var(--font-bold);
-  color: var(--purple-300);
 }

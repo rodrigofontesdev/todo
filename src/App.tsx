@@ -98,7 +98,7 @@ export function App() {
             />
 
             <Button type="submit">
-              Criar <PlusCircle size={18} weight="bold" />
+              Criar <PlusCircle size="1.125rem" weight="bold" />
             </Button>
           </form>
 
@@ -120,7 +120,7 @@ export function App() {
                   </Label>
 
                   <Button onClick={() => handleDeleteTask(task.id)}>
-                    <Trash size={18} />
+                    <Trash size="1.125rem" />
                   </Button>
                 </Task>
               )
