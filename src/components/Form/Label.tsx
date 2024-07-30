@@ -1,6 +1,6 @@
 import { LabelHTMLAttributes, ReactNode } from 'react'
 
-interface LabelProps extends LabelHTMLAttributes<HTMLLabelElement> {
+type LabelProps = LabelHTMLAttributes<HTMLLabelElement> & {
   children: ReactNode
 }
 

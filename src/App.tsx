@@ -11,7 +11,7 @@ import { Task } from './components/Task'
 import styles from './App.module.css'
 import './global.css'
 
-interface ITask {
+type ITask = {
   id: string
   content: string
   isDone: boolean

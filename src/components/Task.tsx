@@ -2,7 +2,7 @@ import { ReactNode } from 'react'
 
 import styles from './Task.module.css'
 
-interface TaskProps {
+type TaskProps = {
   children: ReactNode
   isDone: boolean
 }

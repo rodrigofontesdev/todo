@@ -1,11 +1,11 @@
 import styles from './Counter.module.css'
 
-interface ICounter {
+type ICounter = {
   created: number
   done: number
 }
 
-interface CounterProps {
+type CounterProps = {
   data: ICounter
 }
 
