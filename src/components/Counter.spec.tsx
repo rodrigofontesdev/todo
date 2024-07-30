@@ -3,7 +3,7 @@ import { Counter } from './Counter'
 
 describe('Counter', () => {
   it('should display the right quantity of tasks', () => {
-    const wrapper = render(<Counter data={{ created: 3, done: 2 }} />)
+    const wrapper = render(<Counter amount={{ created: 3, done: 2 }} />)
 
     const created = wrapper.getByText('3', {
       exact: true,

@@ -90,6 +90,7 @@ export function App() {
           <form className={styles.formCreateTask} onSubmit={handleAddTask}>
             <Input
               type="text"
+              name="task"
               placeholder="Adicionar uma nova tarefa"
               value={taskContent}
               required
@@ -102,7 +103,7 @@ export function App() {
             </Button>
           </form>
 
-          <Counter data={{ created: tasks.length, done: doneTaskCounter }} />
+          <Counter amount={{ created: tasks.length, done: doneTaskCounter }} />
 
           {tasks.length > 0 ? (
             tasks.map((task) => {

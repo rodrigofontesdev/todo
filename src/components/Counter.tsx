@@ -1,25 +1,23 @@
 import styles from './Counter.module.css'
 
-type ICounter = {
-  created: number
-  done: number
-}
-
 type CounterProps = {
-  data: ICounter
+  amount: {
+    created: number
+    done: number
+  }
 }
 
-export function Counter({ data }: CounterProps) {
+export function Counter({ amount }: CounterProps) {
   return (
     <div className={styles.counter}>
       <div className={styles.created}>
         Tarefas criadas
-        <span>{data.created}</span>
+        <span>{amount.created}</span>
       </div>
 
       <div className={styles.done}>
         Concluídas
-        <span>{data.created > 0 ? `${data.done} de ${data.created}` : 0}</span>
+        <span>{amount.created > 0 ? `${amount.done} de ${amount.created}` : 0}</span>
       </div>
     </div>
   )
