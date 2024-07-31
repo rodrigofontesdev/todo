@@ -11,21 +11,21 @@ import { Task } from './components/Task'
 import styles from './App.module.css'
 import './global.css'
 
-type ITask = {
+type Task = {
   id: string
   content: string
   isDone: boolean
 }
 
 export function App() {
-  const [tasks, setTasks] = useState<ITask[]>([])
+  const [tasks, setTasks] = useState<Task[]>([])
   const [taskContent, setTaskContent] = useState('')
   const [doneTaskCounter, setDoneTaskCounter] = useState(0)
 
   function handleAddTask(event: FormEvent) {
     event.preventDefault()
 
-    const newTask: ITask = {
+    const newTask: Task = {
       id: crypto.randomUUID(),
       content: taskContent,
       isDone: false,
