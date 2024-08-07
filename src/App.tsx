@@ -96,9 +96,10 @@ export function App() {
               required
               onChange={handleNewTaskContentChange}
               onInvalid={handleNewTaskContentInvalid}
+              data-testid="new-task-input"
             />
 
-            <Button type="submit">
+            <Button type="submit" data-testid="add-new-task">
               Criar <PlusCircle size="1.125rem" weight="bold" />
             </Button>
           </form>

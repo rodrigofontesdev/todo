@@ -12,12 +12,14 @@ export function Counter({ amount }: CounterProps) {
     <div className={styles.counter}>
       <div className={styles.created}>
         Tarefas criadas
-        <span>{amount.created}</span>
+        <span data-testid="created-tasks-counter">{amount.created}</span>
       </div>
 
       <div className={styles.done}>
         Concluídas
-        <span>{amount.created > 0 ? `${amount.done} de ${amount.created}` : 0}</span>
+        <span data-testid="done-tasks-counter">
+          {amount.created > 0 ? `${amount.done} de ${amount.created}` : 0}
+        </span>
       </div>
     </div>
   )
