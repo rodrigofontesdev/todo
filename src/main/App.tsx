@@ -1,15 +1,15 @@
 import { PlusCircle, Trash } from '@phosphor-icons/react'
 import { ChangeEvent, FormEvent, InvalidEvent, useState } from 'react'
-import { Counter } from './components/Counter'
-import { Empty } from './components/Empty'
-import { Button } from './components/Form/Button'
-import { Input } from './components/Form/Input'
-import { Label } from './components/Form/Label'
-import { Header } from './components/Header'
-import { Task } from './components/Task'
+import { Counter } from '../components/Counter'
+import { Empty } from '../components/Empty'
+import { Button } from '../components/Button'
+import { Input } from '../components/Input'
+import { Label } from '../components/Label'
+import { Header } from '../components/Header'
+import { Task } from '../components/Task'
 
 import styles from './App.module.css'
-import './global.css'
+import '../static/styles/global.css'
 
 type Task = {
   id: string
