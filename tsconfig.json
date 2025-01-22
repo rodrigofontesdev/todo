@@ -20,7 +20,14 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
-    "types": ["vitest/globals"]
+    "types": ["vitest/globals"],
+
+    "paths": {
+      "@ui/*": ["./src/ui/*"],
+      "@main/*": ["./src/main/*"],
+      "@static/*": ["./src/static/*"],
+      "@test/*": ["./src/test/*"]
+    }
   },
   "include": ["src", "cypress"],
   "references": [{ "path": "./tsconfig.node.json" }]
