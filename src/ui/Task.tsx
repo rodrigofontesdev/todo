@@ -9,7 +9,10 @@ type TaskProps = {
 
 export function Task({ children, isDone }: TaskProps) {
   return (
-    <div className={`${styles.task} ${isDone ? styles.done : ''}`} data-testid="task-item">
+    <div
+      className={`${styles.task} ${isDone ? styles.done : ''}`}
+      data-testid="task-item"
+    >
       {children}
     </div>
   )

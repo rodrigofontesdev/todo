@@ -87,7 +87,10 @@ export function App() {
 
       <main>
         <div className={styles.container}>
-          <form className={styles.formCreateTask} onSubmit={handleAddTask}>
+          <form
+            className={styles.formCreateTask}
+            onSubmit={handleAddTask}
+          >
             <Input
               type="text"
               name="task"
@@ -99,8 +102,15 @@ export function App() {
               data-testid="new-task-input"
             />
 
-            <Button type="submit" data-testid="add-new-task">
-              Criar <PlusCircle size="1.125rem" weight="bold" />
+            <Button
+              type="submit"
+              data-testid="add-new-task"
+            >
+              Criar{' '}
+              <PlusCircle
+                size="1.125rem"
+                weight="bold"
+              />
             </Button>
           </form>
 
@@ -109,7 +119,10 @@ export function App() {
           {tasks.length > 0 ? (
             tasks.map((task) => {
               return (
-                <Task key={task.id} isDone={task.isDone}>
+                <Task
+                  key={task.id}
+                  isDone={task.isDone}
+                >
                   <Label htmlFor={task.id}>
                     <Input
                       type="checkbox"

@@ -5,7 +5,12 @@ import clipboardImg from './../static/images/clipboard.svg'
 export function Empty() {
   return (
     <div className={styles.empty}>
-      <img src={clipboardImg} alt="Ícone de prancheta" width={56} height={56} />
+      <img
+        src={clipboardImg}
+        alt="Ícone de prancheta"
+        width={56}
+        height={56}
+      />
       <p>
         <strong>Você ainda não tem tarefas cadastradas</strong>
       </p>
