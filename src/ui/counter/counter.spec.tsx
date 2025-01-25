@@ -1,9 +1,15 @@
 import { render } from '@testing-library/react'
-import { Counter } from './Counter'
+import { Counter } from '.'
+import { expect } from 'vitest'
 
 describe('Counter', () => {
   it('should display the right quantity of tasks', () => {
-    const wrapper = render(<Counter amount={{ created: 3, done: 2 }} />)
+    const wrapper = render(
+      <Counter
+        created={3}
+        done={2}
+      />,
+    )
 
     const created = wrapper.getByText('3', {
       exact: true,

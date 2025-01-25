@@ -1,16 +1,14 @@
-import { ReactNode } from 'react'
-
-import styles from './Task.module.css'
+import styles from './styles.module.css'
 
 type TaskProps = {
-  children: ReactNode
+  children: React.ReactNode
   isDone: boolean
 }
 
 export function Task({ children, isDone }: TaskProps) {
   return (
     <div
-      className={`${styles.task} ${isDone ? styles.done : ''}`}
+      className={`${styles.task} ${isDone && styles.done}`}
       data-testid="task-item"
     >
       {children}

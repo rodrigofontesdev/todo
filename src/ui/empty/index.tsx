@@ -1,6 +1,6 @@
-import styles from './Empty.module.css'
+import styles from './styles.module.css'
 
-import clipboardImg from './../static/images/clipboard.svg'
+import clipboardImg from '@static/images/clipboard.svg'
 
 export function Empty() {
   return (

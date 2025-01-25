@@ -26,7 +26,8 @@
       "@ui/*": ["./src/ui/*"],
       "@main/*": ["./src/main/*"],
       "@static/*": ["./src/static/*"],
-      "@test/*": ["./src/test/*"]
+      "@test/*": ["./src/test/*"],
+      "@hooks/*": ["./src/hooks/*"]
     }
   },
   "include": ["src", "cypress"],

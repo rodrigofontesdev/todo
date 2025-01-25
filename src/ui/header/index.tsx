@@ -1,6 +1,6 @@
-import styles from './Header.module.css'
+import styles from './styles.module.css'
 
-import logoImg from '../static/images/logo.svg'
+import logoImg from '@static/images/logo.svg'
 
 export function Header() {
   return (
@@ -8,9 +8,9 @@ export function Header() {
       <div className={styles.container}>
         <img
           src={logoImg}
-          alt="Todo App"
           width={126}
           height={48}
+          alt="ToDo"
         />
       </div>
     </header>
